@@ -15,6 +15,14 @@ Xsection["WW_TuneCUETP8M1_13TeV-pythia8"] = 118.7
 Xsection["WZ_TuneCUETP8M1_13TeV-pythia8"] = 63.9
 Xsection["ZZ_TuneCUETP8M1_13TeV-pythia8"] = 30.2
 
-
-
-
+## Alias
+Xsection["zjets"] = 6025.2 
+Xsection["ttbar"] = 831.8
+Xsection["wjets"] = 61524
+Xsection["antisingletop_t"] = 80.95
+Xsection["singletop_t"] = 136.02
+Xsection["antisingletop_tW"] = 35.6
+Xsection["singletop_tW"] = 35.6
+Xsection["ww"] = 118.7
+Xsection["wz"] = 63.9
+Xsection["zz"] = 30.2
