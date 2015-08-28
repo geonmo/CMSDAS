@@ -218,22 +218,22 @@ for event in events:
     for ijet in range( 0, len( jets ) ) :
         if jets[ijet].pt() > 30.0 and abs(jets[ijet].eta()) < 2.5: # and jets[ijet].LooseId():
             njets += 1
-        ijetP4 = ROOT.TLorentzVector()
-        ijetP4.SetPtEtaPhiM( jets[ijet].pt(), jets[ijet].eta(), jets[ijet].phi(), jets[ijet].mass() )
-        jets_p4.append( ijetP4 )
-        jetPtHist.Fill( jets[ijet].pt() )
-        tagName = "pfCombinedInclusiveSecondaryVertexV2BJetTags"
-        if jets[ijet].bDiscriminator(tagName) > 0.890:
-            ntags = ntags + 1
-            jetSecvtxMass = jets[ijet].vtxMass()
-            secvtxMassHist.Fill( jetSecvtxMass )
-            if options.doMC :
-                if abs(jets[ijet].partonFlavour()) == 5 :
-                    secvtxMassHistB.Fill( jetSecvtxMass )
-                elif abs(jets[ijet].partonFlavour()) == 4 :
-                    secvtxMassHistC.Fill( jetSecvtxMass )
-                else :
-                    secvtxMassHistL.Fill( jetSecvtxMass )
+            ijetP4 = ROOT.TLorentzVector()
+            ijetP4.SetPtEtaPhiM( jets[ijet].pt(), jets[ijet].eta(), jets[ijet].phi(), jets[ijet].mass() )
+            jets_p4.append( ijetP4 )
+            jetPtHist.Fill( jets[ijet].pt() )
+            tagName = "pfCombinedInclusiveSecondaryVertexV2BJetTags"
+            if jets[ijet].bDiscriminator(tagName) > 0.890:
+                ntags = ntags + 1
+                jetSecvtxMass = jets[ijet].vtxMass()
+                secvtxMassHist.Fill( jetSecvtxMass )
+                if options.doMC :
+                    if abs(jets[ijet].partonFlavour()) == 5 :
+                        secvtxMassHistB.Fill( jetSecvtxMass )
+                    elif abs(jets[ijet].partonFlavour()) == 4 :
+                        secvtxMassHistC.Fill( jetSecvtxMass )
+                    else :
+                        secvtxMassHistL.Fill( jetSecvtxMass )
     nJetsHist.Fill(njets) 
     # We're not interested in <=4 jets
     if njets < minJets :
